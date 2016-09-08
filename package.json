@@ -4,7 +4,8 @@
   "description": "Demo app for marketapts",
   "main": "./app/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --progress --colors --host 0.0.0.0",
+    "build:production": "webpack --config webpack.config.prod.js --progress"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
     "clean-css": "^3.4.19",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -40,7 +42,6 @@
     "image-webpack-loader": "^2.0.0",
     "node-sass": "^3.9.3",
     "postcss-loader": "^0.11.1",
-    "react-hot-loader": "^3.0.0-beta.3",
     "resolve-url-loader": "^1.6.0",
     "sass-loader": "^4.0.2",
     "script-ext-html-webpack-plugin": "^1.3.0",
