@@ -1,9 +1,9 @@
 var path = require("path"),
 	  webpack = require("webpack"),
-	  ExtractTextPlugin = require('extract-text-webpack-plugin'),
 	  autoprefixer = require('autoprefixer'),
 	  HtmlWebpackPlugin = require('html-webpack-plugin'),
-	  ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+	  ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin'),
+	  StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
 
 module.exports = {
 	resolve: {
@@ -13,7 +13,7 @@ module.exports = {
   entry: { //Entry Point for Webpack
 	  app: [
 		  "./app/app.js",
-		  //"./sass/entry.sass"
+		  "./sass/index.sass"
 	  ],
   },
 	output: {
@@ -33,8 +33,7 @@ module.exports = {
 			},
       { //Converts SASS to CSS and also performs relevant pathing and auto-prefixes
         test: /\.sass$/,
-	      exclude: __dirname + "/sass/preloader/",
-	      loader: ExtractTextPlugin.extract('css-loader?sourceMap!postcss-loader!resolve-url!sass-loader?indentedSyntax') // Extracts main.css to separate file
+	      loader: StyleExtHtmlWebpackPlugin.inline('postcss-loader!resolve-url!sass-loader?indentedSyntax') // Loads css into style tag
       },
 			{ //Loads the font files from imports
 				test:  /\.(ttf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
@@ -57,7 +56,9 @@ module.exports = {
 	//Config for Post-CSS and AutoPrefixer
 	postcss: [ autoprefixer({ remove: true, browsers: ['> 5%'] }) ],
   plugins: [
-	  new ExtractTextPlugin("main.[hash].css"),
+	  new StyleExtHtmlWebpackPlugin({
+		  minify: true
+	  }),
 	  new webpack.DefinePlugin({
 		  'process.env': {
 			  'NODE_ENV': JSON.stringify('production')
