@@ -19,7 +19,7 @@ module.exports = {
 			`webpack-dev-server/client?http://${address}:${PORT}`,
 			'webpack/hot/only-dev-server',
 			'./app/app.js',
-			//'./sass/entry.sass'
+			'./sass/index.sass'
 		]
 	},
 	output: {
