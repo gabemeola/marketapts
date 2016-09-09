@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, css } from 'aphrodite';
-import { Link } from 'react-router';
 import Nav from './Nav';
 import jumbotronApt from 'assets/jumbotronApt.jpg';
 
