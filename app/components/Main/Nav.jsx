@@ -1,22 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { StyleSheet, css } from 'aphrodite';
+import Stickyfill from "../../../external_modules/stickyfill";
 
-function Nav(props) {
-	return (
-		<header className={css(styles.navWrapper)}>
-			<nav className={css(styles.navText)}>
-				<h1 className={css(styles.navHeader)}>Humansville Apts</h1>
-				<ul className={css(styles.navItems)}>
-					<Link to='/floorplans' className={css(styles.navItem)}>Floorplans</Link>
-					<Link to='/amenities' className={css(styles.navItem)}>Amenities</Link>
-					<Link to='/neighborhood' className={css(styles.navItem)}>Neighborhood</Link>
-					<Link to='/gallery' className={css(styles.navItem)}>Gallery</Link>
-					<Link to='/contact' className={css(styles.navItem)}>Contact</Link>
-				</ul>
-			</nav>
-		</header>
-	)
+class Nav extends Component {
+	componentDidMount() {
+		const nav = document.getElementById('nav');
+		Stickyfill.add(nav);
+	}
+	render() {
+		return (
+			<header className={css(styles.navWrapper)} id="nav">
+				<nav className={css(styles.navText)}>
+					<h1 className={css(styles.navHeader)}>Humansville Apts</h1>
+					<ul className={css(styles.navItems)}>
+						<Link to='/floorplans' className={css(styles.navItem)}>Floorplans</Link>
+						<Link to='/amenities' className={css(styles.navItem)}>Amenities</Link>
+						<Link to='/neighborhood' className={css(styles.navItem)}>Neighborhood</Link>
+						<Link to='/gallery' className={css(styles.navItem)}>Gallery</Link>
+						<Link to='/contact' className={css(styles.navItem)}>Contact</Link>
+					</ul>
+				</nav>
+			</header>
+		)
+	}
 }
 
 const styles = StyleSheet.create({
@@ -25,6 +32,9 @@ const styles = StyleSheet.create({
 		height: '100px',
 		boxSizing: 'border-box',
 		backgroundColor: 'orange',
+		position: 'sticky',
+		position: '-webkit-sticky',
+		top: '0'
 	},
 	navText: {
 		display: 'flex',
