@@ -17,7 +17,7 @@ module.exports = {
 	  ],
   },
 	output: {
-		path: __dirname + "/dist/",
+		path: path.join(__dirname, '/dist/'),
 		filename: "bundle.[hash].js" //Bundled Javascript Webpack Spits out.
 	},
 	module: {
@@ -48,7 +48,7 @@ module.exports = {
 			},
 			{ //Loads HTML imports/requires
 				test: /\.html$/,
-				exclude: __dirname + "/app/index.html",
+				exclude: path.join(__dirname, '/app/index.html'),
 				loader: "html"
 			}
 		]
@@ -74,7 +74,7 @@ module.exports = {
 		  comments: false
 	  }),
 	  new HtmlWebpackPlugin({
-		  template: __dirname + "/app/index.html",
+		  template: path.join(__dirname, '/app/index.html'),
 		  filename: "index.html",
 		  inject: "body",
 		  minify: {
