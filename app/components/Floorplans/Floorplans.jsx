@@ -1,5 +1,6 @@
 import React, { PropTypes } from "react";
 import { StyleSheet, css } from 'aphrodite';
+import * as colorConstants from 'sharedStyles/colorConstants';
 import studioImg from 'assets/studio.jpg';
 import oneBedroomImg from 'assets/oneBedroom.jpg';
 import twoBedroomImg from 'assets/twoBedroom.jpg';
