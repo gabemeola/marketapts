@@ -32,9 +32,11 @@ const styles = StyleSheet.create({
 		height: '100px',
 		boxSizing: 'border-box',
 		backgroundColor: 'orange',
+		position: 'relative',
 		position: 'sticky',
 		position: '-webkit-sticky',
-		top: '0'
+		top: '0',
+		zIndex: '999'
 	},
 	navText: {
 		display: 'flex',
