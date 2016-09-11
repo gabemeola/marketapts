@@ -51,14 +51,14 @@ const styles = StyleSheet.create({
 		backgroundPosition: 'center',
 		boxSizing: 'border-box',
 		overflow: 'hidden',
-		color: 'cadetblue',
+		color: colorConstants.black(),
 		':hover > div': { // Select direct descendant
-			transform: 'translate3d(0, -80%, 0)',
+			transform: 'translate3d(0, -80.1%, 0)',
 		}
 	},
 	gridHeader: {
 		position: 'absolute',
-		backgroundColor: 'rgba(255, 140, 0, 0.8)',
+		backgroundColor: colorConstants.red(0.9),
 		height: '100%',
 		width: '100%',
 		top: '80%',

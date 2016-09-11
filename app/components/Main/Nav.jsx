@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { StyleSheet, css } from 'aphrodite';
+import * as colorConstants from 'sharedStyles/colorConstants';
 import Stickyfill from "../../../external_modules/stickyfill";
 
 class Nav extends Component {
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
 		widths: '100vw',
 		height: '100px',
 		boxSizing: 'border-box',
-		backgroundColor: 'orange',
+		backgroundColor: colorConstants.orange(),
 		position: 'relative',
 		position: 'sticky',
 		position: '-webkit-sticky',
@@ -52,19 +53,22 @@ const styles = StyleSheet.create({
 		transform: 'translateY(-50%)',
 	},
 	navHeader: {
-		color: 'darkgray',
+		color: colorConstants.purple(),
+		fontWeight: '500',
 		display: 'inline-block',
 	},
 	navItems: {
 		display: 'flex',
 		flexDirection: 'row',
 		flexWrap: 'wrap',
-		justifyContent: 'center'
+		justifyContent: 'center',
+		fontWeight: '700'
 	},
 	navItem: {
 		display: 'inline-block',
 		marginRight: '7.5px',
 		marginLeft: '7.5x',
+		color: colorConstants.black(),
 		':first-child': {
 			marginLeft: '0'
 		},
@@ -72,7 +76,8 @@ const styles = StyleSheet.create({
 			marginRight: '0'
 		},
 		':hover': {
-			cursor: 'pointer'
+			cursor: 'pointer',
+			color: colorConstants.red()
 		}
 	}
 });
