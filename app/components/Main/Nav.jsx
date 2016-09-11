@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
 		display: 'inline-block',
 		marginRight: '7.5px',
 		marginLeft: '7.5x',
+		transition: 'all .1s ease-in-out',
 		color: colorConstants.black(),
 		':first-child': {
 			marginLeft: '0'

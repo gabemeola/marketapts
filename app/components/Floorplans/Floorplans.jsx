@@ -15,7 +15,18 @@ function Floorplans({floorPlanOptions}) {
 					return (
 						<div key={index} className={css(styles.gridItem) + ' ' + css(styles[apt])}>
 							<div className={css(styles.gridHeader)}>
-								{floorPlanOptions[apt].name}
+								<div className={css(styles.gridTitle)}>
+									{floorPlanOptions[apt].name}
+								</div>
+								<div className={css(styles.gridBottom)}>
+									<div className={css(styles.gridBottomText)}>
+										<div>{floorPlanOptions[apt].bed} bedroom</div>
+										<div>{floorPlanOptions[apt].bath} bathroom</div>
+										<div>${floorPlanOptions[apt].rentRangeStart} - ${floorPlanOptions[apt].rentRangeEnd} / month</div>
+										<div>${floorPlanOptions[apt].deposit} Deposit</div>
+										<div>{floorPlanOptions[apt].sqFeet} Sq. feet</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					)
@@ -48,21 +59,45 @@ const styles = StyleSheet.create({
 		backgroundColor: 'inherit',
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'contain',
-		backgroundPosition: 'center',
+		backgroundPosition: 'top center',
 		boxSizing: 'border-box',
 		overflow: 'hidden',
 		color: colorConstants.black(),
 		':hover > div': { // Select direct descendant
 			transform: 'translate3d(0, -80.1%, 0)',
+			backgroundColor: colorConstants.red(0.9),
 		}
 	},
 	gridHeader: {
 		position: 'absolute',
-		backgroundColor: colorConstants.red(0.9),
+		backgroundColor: colorConstants.red(0.97),
 		height: '100%',
 		width: '100%',
 		top: '80%',
-		transition: 'all .2s ease-in-out'
+		transition: 'all .2s ease-in-out',
+	},
+	gridTitle: {
+		position: 'relative',
+		width: '50%',
+		margin: '0 auto',
+		textAlign: 'center',
+		top: '6%'
+	},
+	gridBottom: {
+		position: 'absolute',
+		backgroundColor: colorConstants.maroon(0.6),
+		height: '83%',
+		width: '100%',
+		bottom: '0',
+	},
+	gridBottomText: {
+		position: 'relative',
+		paddingTop: '2%',
+		width: '80%',
+		margin: '0 auto',
+		textAlign: 'center',
+		color: '#fff',
+		lineHeight: '20px'
 	},
 	studio: {
 		backgroundImage: `url(${studioImg})`
