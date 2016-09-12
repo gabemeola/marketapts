@@ -15,11 +15,11 @@ class Nav extends Component {
 				<nav className={css(styles.navText)}>
 					<h1 className={css(styles.navHeader)}>Humansville Apts</h1>
 					<ul className={css(styles.navItems)} onTouchStart={() => {}}>
-						<Link to='/floorplans' className={css(styles.navItem)}>Floorplans</Link>
-						<Link to='/amenities' className={css(styles.navItem)}>Amenities</Link>
-						<Link to='/neighborhood' className={css(styles.navItem)}>Neighborhood</Link>
-						<Link to='/gallery' className={css(styles.navItem)}>Gallery</Link>
-						<Link to='/contact' className={css(styles.navItem)}>Contact</Link>
+						<Link to='/floorplans' activeClassName={css(styles.navItemActive)} className={css(styles.navItem)}>Floorplans</Link>
+						<Link to='/amenities' activeClassName={css(styles.navItemActive)} className={css(styles.navItem)}>Amenities</Link>
+						<Link to='/neighborhood' activeClassName={css(styles.navItemActive)} className={css(styles.navItem)}>Neighborhood</Link>
+						<Link to='/gallery' activeClassName={css(styles.navItemActive)} className={css(styles.navItem)}>Gallery</Link>
+						<Link to='/contact' activeClassName={css(styles.navItemActive)} className={css(styles.navItem)}>Contact</Link>
 					</ul>
 				</nav>
 			</header>
@@ -89,6 +89,10 @@ const styles = StyleSheet.create({
 		':active': {
 			color: colorConstants.red()
 		}
+	},
+	navItemActive: {
+		//color: colorConstants.red()
+		borderBottom: `2px solid ${colorConstants.red()}`
 	}
 });
 

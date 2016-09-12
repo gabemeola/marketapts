@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
 	contentWrapper: {
 		position: 'relative',
 		top: 'calc(100vh - 100px)',
-		zIndex: '2'
+		zIndex: '2',
+		backgroundColor: '#fff'
 	}
 });
 
