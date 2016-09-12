@@ -14,7 +14,7 @@ class Nav extends Component {
 			<header className={css(styles.navWrapper)} id="nav">
 				<nav className={css(styles.navText)}>
 					<h1 className={css(styles.navHeader)}>Humansville Apts</h1>
-					<ul className={css(styles.navItems)}>
+					<ul className={css(styles.navItems)} onTouchStart={() => {}}>
 						<Link to='/floorplans' className={css(styles.navItem)}>Floorplans</Link>
 						<Link to='/amenities' className={css(styles.navItem)}>Amenities</Link>
 						<Link to='/neighborhood' className={css(styles.navItem)}>Neighborhood</Link>
@@ -29,7 +29,7 @@ class Nav extends Component {
 
 const styles = StyleSheet.create({
 	navWrapper: {
-		widths: '100vw',
+		width: '100vw',
 		height: '100px',
 		boxSizing: 'border-box',
 		backgroundColor: colorConstants.orange(),
@@ -47,10 +47,12 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		width: '85%',
 		margin: '0 auto',
-		//backgroundColor: 'brown',
 		position: 'relative',
 		top: '50%',
 		transform: 'translateY(-50%)',
+		'@media only screen and (max-width: 580px)': {
+			width: '100%'
+		}
 	},
 	navHeader: {
 		color: colorConstants.purple(),
@@ -62,7 +64,11 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		flexWrap: 'wrap',
 		justifyContent: 'center',
-		fontWeight: '700'
+		fontWeight: '700',
+		marginTop: '5px',
+		'@media only screen and (max-width: 580px)': {
+			fontSize: '20px'
+		}
 	},
 	navItem: {
 		display: 'inline-block',
@@ -78,6 +84,9 @@ const styles = StyleSheet.create({
 		},
 		':hover': {
 			cursor: 'pointer',
+			color: colorConstants.red()
+		},
+		':active': {
 			color: colorConstants.red()
 		}
 	}
