@@ -9,6 +9,7 @@ const routes = (
 	<Router history={hashHistory}>
 		<Route path='/' component={MainContainer}>
 			<Route path='/floorplans' component={FloorplansContainer}/>
+			{/*<Route path='/floorplans/:floorplan' component={} />*/}
 		</Route>
 	</Router>
 );
