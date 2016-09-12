@@ -2,7 +2,8 @@ import React from 'react';
 import { Router, hashHistory, Route, IndexRoute } from "react-router";
 import {
 	MainContainer,
-	FloorplansContainer
+	FloorplansContainer,
+	AmenitiesContainer
 } from 'containers';
 
 const routes = (
@@ -10,6 +11,7 @@ const routes = (
 		<Route path='/' component={MainContainer}>
 			<Route path='/floorplans' component={FloorplansContainer}/>
 			{/*<Route path='/floorplans/:floorplan' component={} />*/}
+			<Route path='/amenities' component={AmenitiesContainer}/>
 		</Route>
 	</Router>
 );
